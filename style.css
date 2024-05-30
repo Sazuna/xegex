@@ -1,0 +1,185 @@
+.container{
+ background: none;/*linear-gradient(#999999, #ffffff);*/
+}
+
+h1
+{
+ text-align: center;
+ font-family: cursive;
+}
+
+fieldset {
+ border: 1px groove #ddd !important;
+ padding: 0 1.4em 1.4em 1.4em important;
+ margin: 0 0 1.5em 0 !important;
+ background: white;/*linear-gradient(#aaaaaaee, #ffffffee);*/
+ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+legend {
+ width: inherit;
+ padding: 0 10px;
+ border-bottom: none;
+ text-decoration: italic;
+ font-family: cursive;
+ color: black;
+ position: center;
+ margin-bottom:0;
+}
+
+td {
+ padding: 0.5em;
+}
+
+/* container pour aligner l'icône d'aide avec la legend */
+.svg-container {
+    display: flex;
+    align-items: center;
+    margin-left: 0.1em;
+}
+
+.form-label {
+ padding-top:1.4em;
+ font-family: cursive;
+ font-size: 1.2em;
+}
+
+a {
+ text-decoration: none;
+ color: black;
+}
+a:hover {
+ color: grey;
+}
+
+p {
+ margin-bottom: 0;
+}
+
+fieldset {
+ display: none;
+}
+fieldset.active {
+ display:block;
+}
+
+
+
+
+/****** Labels ********/
+input[type="radio"]:checked + label {
+ border: 5px solid;
+ border-color: #eeeeee;
+}
+
+label {
+ margin: 5px;
+}
+
+input {
+ vertical-align: middle; /* Bug d'alignement des input Color */
+}
+
+input[type="color"] {
+ margin-left:1em;
+}
+
+.plus-btn {
+ padding-top: 0.5em;
+ padding-right: 1em;
+ padding-bottom: 0.5em;
+ padding-left: 1em;
+}
+
+/****** Info **********/
+/* décommenter display pour ajouter l'effet caché-montré */
+.show-me {
+ /*display:none;*/
+ text-align: right;
+ width: 90%;
+ max-width: 90%;
+ float: right;
+ font-size: 0.7em;
+}
+.hover-me:hover+.show-me {
+ /*display:block;*/
+}
+
+.hover-me {
+ clear: both; /* ne se fait pas couper par le float */
+}
+
+/****** Superposition de div ******/
+.superposable
+{
+ position: relative;
+}
+
+.objet-superpose
+{
+ position: absolute;
+ bottom: 15px;
+ right: 15px;
+}
+
+.regex-entry
+{
+ padding-bottom: 1em;
+}
+
+/****** Message de confirmation de suppression ******/
+
+.confirmation-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    z-index: 1000;
+    display: none;
+}
+
+.dialog-content {
+    padding: 20px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+#confirm-btn, #cancel-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#confirm-btn {
+    background-color: #d9534f;
+    color: white;
+}
+
+#cancel-btn {
+    background-color: #5bc0de;
+    color: white;
+}
+
+/************ Aide ************************/
+li
+{
+   text-align: justify;
+}
+
+.help
+{
+   padding:1em;
+}
