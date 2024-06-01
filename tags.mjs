@@ -29,11 +29,11 @@ export function createNewTagElements(label, color, enregistre, is_new_tag) {
   // Récupération des tags existants pour les mettre dans le menu déroulant
   var project_name = $('input[name="projets"]:checked');
   if (project_name != undefined) {
-    project_name = project_name.attr('id');
-    project_name = project_name.replace(/_/g, " ");
+   project_name = project_name.attr('id');
+   project_name = project_name.replace(/_/g, " ");
   }
   else {
-    project_name = selected_projet_name;
+   project_name = selected_projet_name;
   }
 
   var otherTags = [];

@@ -112,10 +112,16 @@
          $stmt->bindParam(':tag_name', $tag_name);
          $stmt->execute();
          $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+         $regex = "";
          foreach ($results as $res) {
           $mot = $res['mot'];
           $color = $res['color'];
-          $regex = "/\b".$mot."\b/iu"; // Frontières de mots \b, i ignorecase, u unicode
+          // Factorisation de regex pour moins d'opérations sur tout le document
+          $regex = $regex.$mot."|";
+         }
+         if (strlen($regex) > 0) {
+          $regex = rtrim($regex, '|');
+          $regex = "/\b(".$regex.")\b/iu"; // Frontières de mots \b, i ignorecase, u unicode
           $fileContent = preg_replace($regex, "<span class='btn' style='background-color:$color; color:white' name='_".$tag_name."_' method='lexique'&GT$0&LT/span>", $fileContent);
          }
 
@@ -126,10 +132,15 @@
          $stmt->execute();
 
          $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+         $regex = "";
          foreach ($results as $res) {
-          $regex = $res['regex'];
+          $reg = $res['regex'];
           $color = $res['color'];
-          $regex = "/\b".$regex."\b/iu";
+          $regex = $regex.$reg."|";
+         }
+         if (strlen($regex) > 0) {
+          $regex = rtrim($regex, '|');
+          $regex = "/\b(".$regex.")\b/iu";
           $fileContent = preg_replace($regex, "<span class='btn' style='background-color:$color; color:white' name='_".$tag_name."_' method='regex'&GT$0&LT/span>", $fileContent);
          }
         } catch (PDOException $e) {

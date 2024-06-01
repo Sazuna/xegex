@@ -106,7 +106,7 @@
     <legend class='w-auto px-2'>Importer un corpus</legend>
     <div class='form-group'>
      <div class="m-3">
-      <input class="form-control" type="file" id="formFile" name="formFile">
+      <input class="form-control" type="file" accept=".txt" id="formFile" name="formFile" required>
      </div>
 
 
